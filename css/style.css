@@ -2,8 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: white;
-    font-family: 'Roboto Condensed', sans-serif;
+    color: var(--secondary-bg-color);
+    font-family: var(--fuente);
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal; 
@@ -12,25 +12,26 @@
 /* VARIABLES GLOBALES */
 :root {
     /* BACKGROUND COLORS */
-    --main-bg-color: #523523;
-    --secondary-bg-color: rgb(20, 20, 20);
+    --main-bg-color: rgb(235, 245, 236);
+    --secondary-bg-color: #222;
     /* NAVBAR COLORS*/
-    --navbar-color: #24170f;
+    --navbar-color: rgb(235, 245, 236);
     --navbar-toggler: #523523;
     --navbar-toggler-border: #ffffff;
-    --navbar-toggler-border-active: #925f3f;
-    --navbar-link: #858282;
+    --navbar-toggler-border-active: rgb(0, 52, 73);
+    --navbar-hoover: rgb(0, 209, 177);
     /* FOOTER BACKGROUND COLOR*/
-    --footer-bg-color: #24170f;
+    --footer-bg-color: #222;
     /* BORDER COLORS*/
     --border-color: rgb(63, 47, 47);
     /* FONT */
-    --font-color: white;
+    --fuente-color: white;
+    --fuente: 'Roboto Condensed', sans-serif
 }
 
 /* Cambia el fondo del Navbar */
-.navbar {
-  background-color: #4CAF50; /* Verde */
+.navbar .container-fluid {
+  background-color: var(--navbar-color);
 }
   
   /* Cambia el color del texto de los enlaces */
@@ -40,28 +41,28 @@
   
   /* Cambia el color del texto al pasar el mouse por encima */
 .navbar .nav-link:hover {
-  color: #ff0022; /* Dorado */
+  color: var(--navbar-hoover); /* Dorado */
+  text-shadow: 1px 1px 1px var(--navbar-toggler-border-active)
 }
   
   /* Cambia el color del enlace activo */
 .navbar .nav-link.active {
- color: #FF4500; /* Naranja */
+ color: var(--navbar-toggler-border-active); /* Naranja */
 }
 
 
 
  /* Frase principal */
  .frase {
-  background: linear-gradient(to right, #000, #111);
-  color: #fff;
+  background: linear-gradient(to right, var(--main-bg-color), white);
+  color: var(--secondary-bg-color);
   padding: 20px 20px;
-  font-family: 'Roboto Condensed', sans-serif;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  font-family: var(--fuente);
+  text-shadow: 1px 1px 4px var(--main-bg-color);
 }
 
 .frase h1 {
   font-size: 3rem;
-  font-weight: bold;
   margin-bottom: 20px;
 }
 
@@ -73,17 +74,16 @@
 }
 
 footer{
-  background-color: #222;
+  background-color: var(--footer-bg-color);
   padding: 3rem;
   color:white
 }
 
-footer section{
-  float: right;
-}
 footer p{
   margin: 0;
+  color: white;
 }
+
 footer a{
   color: white;
 }
