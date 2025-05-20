@@ -52,10 +52,8 @@
   
   /* Cambia el color del enlace activo */
 .navbar .nav-link.active {
- color: var(--navbar-toggler-border-active); /* Naranja */
+ color: var(--navbar-toggler-border-active);
 }
-
-
 
  /* Frase principal */
  .frase {
