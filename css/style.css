@@ -29,11 +29,16 @@
     --fuente: 'Roboto Condensed', sans-serif
 }
 
-/* Cambia el fondo del Navbar */
-.navbar .container-fluid {
+.navbar {
   background-color: var(--navbar-color);
 }
-  
+
+/* Cambia el fondo del Navbar 
+.navbar .container-fluid {
+  background-color: var(--navbar-color);
+}*/
+
+
   /* Cambia el color del texto de los enlaces */
 .navbar .nav-link {
   color: rgb(0, 0, 0);
