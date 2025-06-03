@@ -7,6 +7,7 @@
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal; 
+    scroll-behavior: smooth;
 }
 
 /* VARIABLES GLOBALES */
@@ -29,17 +30,13 @@
     --fuente: 'Roboto Condensed', sans-serif
 }
 
+/* ---------------- NAVBAR ---------------- */
+
 .navbar {
   background-color: var(--navbar-color);
 }
 
-/* Cambia el fondo del Navbar 
-.navbar .container-fluid {
-  background-color: var(--navbar-color);
-}*/
-
-
-  /* Cambia el color del texto de los enlaces */
+/* Cambia el color del texto de los enlaces */
 .navbar .nav-link {
   color: rgb(0, 0, 0);
 }
@@ -55,8 +52,10 @@
  color: var(--navbar-toggler-border-active);
 }
 
- /* Frase principal */
- .frase {
+/* ---------------- END OF NAVBAR ---------------- */
+
+/* ---------------- FRASE PRINCIPAL ---------------- */
+.frase {
   background: linear-gradient(to right, var(--main-bg-color), white);
   color: var(--secondary-bg-color);
   padding: 20px 20px;
@@ -76,6 +75,51 @@
   margin: 0 auto;
 }
 
+/* ---------------- FIN FRASE PRINCIPAL ---------------- */
+
+/* ------------- CARD SECTION -------------- */
+
+#main{
+  background-color: var(--footer-bg-color);
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.card-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.card{
+  width: 300px;
+  height: 300px;
+  border-radius: 10px 0;
+  margin: 20px;
+  border: 2px solid var(--footer-bg-color);
+  text-align: center;
+  transition: 0.25s;
+}
+
+.card:hover{
+  box-shadow: 0 0 20px var(--main-bg-color);
+}
+
+.card img{
+  width: 290px;
+  height: 300px;
+  border-radius: 10px 0;
+  margin: 5px;
+}
+
+.card h3{
+  font-weight: bold;
+}
+/* ------------- END OF CARD SECTION -------------- */
+
+/* ------------- FOOTER -------------- */
 footer{
   background-color: var(--footer-bg-color);
   padding: 3rem;
@@ -90,3 +134,5 @@ footer p{
 footer a{
   color: white;
 }
+
+/* ------------- END OF FOOTER -------------- */
