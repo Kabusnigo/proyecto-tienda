@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seccion Mujeres</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="bienvenida-modal" class="modal">
+  <div class="modal-contenido">
+    <h2>¡Bienvenido a la tienda femenina! 🏋️‍♂️</h2>
+    <p>Explorá nuestros productos y encontrá tu estilo.</p>
+    <button onclick="cerrarModal()">Entrar</button>
+  </div>
+</div>
+    <div class="container">
+      <div class="slider">
+        <input type="radio" name="slider" id="slideOne" checked />
+        <input type="radio" name="slider" id="slideTwo" />
+        <input type="radio" name="slider" id="slideThree" />
+        <input type="radio" name="slider" id="slideFour" />
+
+        <div class="buttons">
+          <label for="slideOne"></label>
+          <label for="slideTwo"></label>
+          <label for="slideThree"></label>
+          <label for="slideFour"></label>
+        </div>
+
+        <div class="content">
+          <div class="firstslide">
+            <div class="motivacion">
+              <img
+                src="1pdj-279bd434e7e0e2d44c17263308758722-640-0.jpg"
+                alt="Conjunto Deportivo"
+              />
+              <h1>
+                “No importa cuántas veces caigas, lo que define tu grandeza es
+                cuántas veces te levantás. Cada gota de sudor es una promesa de
+                superación. ¡Dale con todo!”
+              </h1>
+            </div>
+          </div>
+          <div class="twoslide">
+            <div class="motivacion">
+              <img
+                src="D_NQ_NP_789446-MLA50463930307_062022-W.jpg"
+                alt="Calza Mujeres"
+              />
+              <h2>
+                “Transformá el ‘no puedo’ en ‘lo logré’. Cada entrenamiento es
+                una batalla ganada contra tus límites. No estás compitiendo con
+                nadie, solo con la versión de vos mismo de ayer.”
+              </h2>
+            </div>
+          </div>
+
+          <div class="threeslide">
+            <div class="motivacion">
+              <img
+                src="woman-workout-in-gym-with-dumbbells-royalty-free-image-1661857202.jpg"
+                alt="Mujer entrenando"
+              />
+              <h3>
+                “La motivación te hace empezar, pero la constancia es la que te
+                transforma. Entrenar no es castigo, es el regalo que le das a tu
+                cuerpo por todo lo que hace por vos.”
+              </h3>
+            </div>
+          </div>
+          <div class="fourtslide">
+            <div class="motivacion">
+              <img
+                src="mujer-con-abdominales-visibles-haciendo-fitness.jpg"
+                alt="Mujer abdominales"
+              />
+              <h4>
+                “La mente se rinde mucho antes que el cuerpo. Si tu cabeza está
+                en el juego, tu cuerpo va a seguir. Creé en vos, incluso cuando
+                estés cansado. Ahí es donde empieza el verdadero cambio.”
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="productos-solo-deportes">
+  <div class="producto">
+    <img src="1pdj-279bd434e7e0e2d44c17263308758722-640-0.jpg" alt="Combo Deportivo" />
+    <p class="precio">$3000</p>
+    <p class="precio">Combo Deportivo</p>
+  </div>
+  <div class="producto">
+    <img src="D_NQ_NP_789446-MLA50463930307_062022-W.jpg" alt="Calza" />
+    <p class="precio">$2000</p>
+    <p class="precio">Calzas Deportivas</p>
+  </div>
+  <div class="producto">
+    <img src="2832-scaled.jpg" alt="Top" />
+    <p class="precio">$1500</p>
+    <p class="precio">Top Deportivo</p>
+  </div>
+  <div class="producto">
+    <img src="short.jpg" alt="short"/>
+    <p class="precio">$1500</p>
+    <p class="precio">Short</p>
+  </div>
+</div>
+
+  <script>
+  const slides = ['One', 'Two', 'Three', 'Four'];
+  let counter = 0;
+
+  setInterval(() => {
+    // Incrementamos el contador y lo reiniciamos cuando pasa el último slide
+    counter = (counter + 1) % slides.length;
+    // Marcamos como seleccionado el radio correspondiente
+    document.getElementById('slide' + slides[counter]).checked = true;
+  }, 4000);
+</script>
+<script>
+  function cerrarModal() {
+    document.getElementById('bienvenida-modal').style.display = 'none';
+  }
+
+  // Mostrar automáticamente al cargar
+  window.addEventListener('load', () => {
+    document.getElementById('bienvenida-modal').style.display = 'flex';
+  });
+</script>
+<!-- Footer -->
+    <footer>
+     <p>Bienvenidos a Fast</p>
+     <a href="#inicio">Ir al comienzo</a>
+     <a target="_blank" href="https://ceneka.net/lucaslautro">donacion</a>
+     <a href="contacto.html">Contactame</a>
+     <p>Copyrigth2025</p>
+    </footer>
+  </body>
+</html>
+
+Empieza CSS
+*{
+    margin: 0%;
+    padding: 0;
+
+}
+body {
+  background-color: darkseagreen;
+  margin: 0;
+  padding: 0;
+}
+.container{
+    position:relative;
+    width: 100%;
+    height: auto;
+    background-color: aqua;
+}
+
+.slider input{
+    visibility: hidden;
+    display: none;
+}
+.buttons{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 50px;
+    gap: 10px;
+
+}
+.buttons label{
+    width: 20px;
+    height: 20px;
+    background-color: antiquewhite;
+    opacity: 0.5;
+    cursor: pointer;
+    z-index: 1;
+
+}
+.buttons label:hover{
+    scale: 1.2;
+    opacity: 1;
+}
+
+.slider input:nth-child(1):checked ~ .buttons label:nth-child(1),
+.slider input:nth-child(2):checked ~ .buttons label:nth-child(2),
+.slider input:nth-child(3):checked ~ .buttons label:nth-child(3),
+.slider input:nth-child(4):checked ~ .buttons label:nth-child(4)
+{
+    opacity: 1;
+    scroll-margin: 1.2;
+    width: 40px;
+}
+
+.content{
+position: relative;
+width: 400vw;
+display:flex;
+transition: 400ms ease-in-out;
+}
+.firstslide,.twoslide,.threeslide,.fourtslide{
+    position: relative;
+    width:100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.firstslide
+{
+    background-color: rosybrown;
+}
+.twoslide
+{
+    background-color: rebeccapurple;
+}
+.threeslide
+{
+    background-color: violet;
+}
+.fourtslide
+{
+    background-color: thistle;
+}
+.slider input:nth-child(1):checked ~ .content{
+    left: 0;
+}
+
+.slider input:nth-child(2):checked ~ .content{
+    left: -100vw;
+}
+
+.slider input:nth-child(3):checked ~ .content{
+    left: -200vw;
+}
+
+.slider input:nth-child(4):checked ~ .content{
+    left: -300vw;
+}
+.motivacion {
+  display: flex;              /* coloca imagen y texto lado a lado */
+  align-items: center;        /* centra verticalmente */
+  justify-content: center;    /* centra todo el conjunto en el slide */
+  gap: 30px;                  /* espacio entre imagen y texto */
+  padding: 20px;
+}
+
+.motivacion img {
+  width: 200px;               /* tamaño de la imagen */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.motivacion h1 {
+  font-size: 2rem;
+  color: white;
+  max-width: 400px;
+}
+.motivacion h2 {
+  font-size: 2rem;
+  color: white;
+  max-width: 400px;
+}
+.motivacion h3 {
+  font-size: 2rem;
+  color: white;
+  max-width: 400px;
+}
+.motivacion h4 {
+  font-size: 2rem;
+  color: white;
+  max-width: 400px;
+}
+.productos-solo-deportes {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 100px;
+  padding: 50px 20px;
+  
+  margin: 0;}
+
+.producto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 8px 8px rgba(0,0,0,0.3), 0 10px 20px rgba(0,0,0,0.15);/* Sombra */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.producto:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2); /* Más sombra al pasar el mouse */
+}
+
+.producto img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.precio {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+  font-size: 1.1rem;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* fondo oscuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-contenido {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 90%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.modal-contenido h2 {
+  margin-bottom: 10px;
+}
+
+.modal-contenido button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: darkgreen;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+footer {
+  background-color: #333;   /* Cambiá por el color que prefieras */
+  color: white;             /* Para que el texto se vea bien */
+  padding: 20px;
+  
+}
