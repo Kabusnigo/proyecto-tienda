@@ -117,6 +117,29 @@
 .card h3{
   font-weight: bold;
 }
+
+.recuadro {
+    background-color: rgb(206, 243, 238); /* Fondo claro */
+    border: 1px solid #ddd; /* Borde gris claro */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 8px; /* Esquinas redondeadas */
+    padding: 20px; /* Espaciado interno */
+    margin-top: 20px; /* Espaciado superior */
+}
+
+.recuadro h3 {
+    font-size: 1.5rem;
+    color: #333; /* Color oscuro para títulos */
+    margin-bottom: 10px;
+}
+
+.recuadro p {
+    font-size: 1rem;
+    color: #555; /* Color de texto más suave */
+    line-height: 1.6; /* Altura de línea */
+}
+
+
 /* ------------- END OF CARD SECTION -------------- */
 
 /* ------------- FOOTER -------------- */
