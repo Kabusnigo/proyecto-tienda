@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--secondary-bg-color);
+    font-family: var(--fuente);
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal; 
+    scroll-behavior: smooth;
+}
+
+/* VARIABLES GLOBALES */
+:root {
+    /* BACKGROUND COLORS */
+    --main-bg-color: rgb(235, 245, 236);
+    --secondary-bg-color: #222;
+    /* NAVBAR COLORS*/
+    --navbar-color: rgb(235, 245, 236);
+    --navbar-toggler: #523523;
+    --navbar-toggler-border: #ffffff;
+    --navbar-toggler-border-active: rgb(0, 52, 73);
+    --navbar-hoover: rgb(0, 209, 177);
+    /* FOOTER BACKGROUND COLOR*/
+    --footer-bg-color: #222;
+    /* BORDER COLORS*/
+    --border-color: rgb(63, 47, 47);
+    /* FONT */
+    --fuente-color: white;
+    --fuente: 'Roboto Condensed', sans-serif
+}
+
+/* ---------------- NAVBAR ---------------- */
+
+.navbar {
+  background-color: var(--navbar-color);
+}
+
+/* Cambia el color del texto de los enlaces */
+.navbar .nav-link {
+  color: rgb(0, 0, 0);
+}
+  
+  /* Cambia el color del texto al pasar el mouse por encima */
+.navbar .nav-link:hover {
+  color: var(--navbar-hoover); /* Dorado */
+  text-shadow: 1px 1px 1px var(--navbar-toggler-border-active)
+}
+  
+  /* Cambia el color del enlace activo */
+.navbar .nav-link.active {
+ color: var(--navbar-toggler-border-active);
+}
+
+/* ---------------- END OF NAVBAR ---------------- */
+
+body {
+  background-color: darkseagreen;
+  margin: 0;
+  padding: 0;
+}
+
+#main{
+  background-color: var(--footer-bg-color);
+}
+
+.container-lucas{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.slider input{
+    visibility: hidden;
+    display: none;
+}
+.buttons{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 50px;
+    gap: 10px;
+
+}
+.buttons label{
+    width: 20px;
+    height: 20px;
+    background-color: antiquewhite;
+    opacity: 0.5;
+    cursor: pointer;
+    z-index: 1;
+
+}
+.buttons label:hover{
+    scale: 1.2;
+    opacity: 1;
+}
+
+.slider input:nth-child(1):checked ~ .buttons label:nth-child(1),
+.slider input:nth-child(2):checked ~ .buttons label:nth-child(2),
+.slider input:nth-child(3):checked ~ .buttons label:nth-child(3),
+.slider input:nth-child(4):checked ~ .buttons label:nth-child(4)
+{
+    opacity: 1;
+    scroll-margin: 1.2;
+    width: 40px;
+}
+
+.content{
+position: relative;
+width: 400vw;
+display:flex;
+transition: 400ms ease-in-out;
+}
+
+.firstslide,.twoslide,.threeslide,.fourtslide{
+    position: relative;
+    width:100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.firstslide
+{
+    background-color: rosybrown;
+}
+.twoslide
+{
+    background-color: rebeccapurple;
+}
+.threeslide
+{
+    background-color: violet;
+}
+.fourtslide
+{
+    background-color: thistle;
+}
+.slider input:nth-child(1):checked ~ .content{
+    left: 0;
+}
+
+.slider input:nth-child(2):checked ~ .content{
+    left: -100vw;
+}
+
+.slider input:nth-child(3):checked ~ .content{
+    left: -200vw;
+}
+
+.slider input:nth-child(4):checked ~ .content{
+    left: -300vw;
+}
+.motivacion {
+  display: flex;              /* coloca imagen y texto lado a lado */
+  align-items: center;        /* centra verticalmente */
+  justify-content: center;    /* centra todo el conjunto en el slide */
+  gap: 30px;                  /* espacio entre imagen y texto */
+  padding: 20px;
+}
+
+.motivacion img {
+  width: 200px;               /* tamaño de la imagen */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.motivacion h1 {
+  font-size: 2rem;
+  color: white;
+  max-width: 400px;
+}
+.motivacion h2 {
+  font-size: 2rem;
+  color: white;
+  max-width: 400px;
+}
+.motivacion h3 {
+  font-size: 2rem;
+  color: white;
+  max-width: 400px;
+}
+.motivacion h4 {
+  font-size: 2rem;
+  color: white;
+  max-width: 400px;
+}
+.productos-solo-deportes {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 100px;
+  padding: 50px 20px;
+  
+  margin: 0;}
+
+.producto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 8px 8px rgba(0,0,0,0.3), 0 10px 20px rgba(0,0,0,0.15);/* Sombra */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.producto:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2); /* Más sombra al pasar el mouse */
+}
+
+.producto img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.precio {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+  font-size: 1.1rem;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* fondo oscuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-contenido {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 90%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.modal-contenido h2 {
+  margin-bottom: 10px;
+}
+
+.modal-contenido button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: darkgreen;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+footer {
+  background-color: #333;   /* Cambiá por el color que prefieras */
+  color: white;             /* Para que el texto se vea bien */
+  padding: 20px;
+  
+}
