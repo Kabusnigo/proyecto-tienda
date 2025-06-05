@@ -263,9 +263,21 @@ transition: 400ms ease-in-out;
   border-radius: 5px;
   cursor: pointer;
 }
-footer {
-  background-color: #333;   /* Cambiá por el color que prefieras */
-  color: white;             /* Para que el texto se vea bien */
-  padding: 20px;
-  
+
+/* ------------- FOOTER -------------- */
+footer{
+  background-color: var(--footer-bg-color);
+  padding: 3rem;
+  color:white
 }
+
+footer p{
+  margin: 0;
+  color: white;
+}
+
+footer a{
+  color: white;
+}
+
+/* ------------- END OF FOOTER -------------- */
