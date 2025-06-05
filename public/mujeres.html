@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed" rel="stylesheet">
   </head>
   <body>
+    <div id="particles-js"></div>
 <!-- Navbar -->
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -168,14 +169,60 @@
   });
 </script>
 <!-- Footer -->
-    <footer>
-     <p>Bienvenidos a Fast</p>
-     <a href="#inicio">Ir al comienzo</a>
-     <a target="_blank" href="https://ceneka.net/lucaslautro">donacion</a>
-     <a href="contacto.html">Contactame</a>
-     <p>Copyrigth2025</p>
-    </footer>
+     <footer id="footer">
+  <div class="footer-content">
+    <p>Bienvenidos a <strong>Fast</strong></p>
+    <div class="footer-links">
+      <a href="#inicio">Ir al comienzo</a>
+      <a target="_blank" href="https://ceneka.net/lucaslautro">Donación</a>
+      <a href="contacto.html">Contactame</a>
+    </div>
+    <p id="copy">&copy; <span id="year"></span> Fast. Todos los derechos reservados.</p>
+  </div>
+</footer>
+<script>
+  // Inserta el año actual
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+  // efecto particulas
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 80 },
+      color: { value: "#ffffff" },
+      shape: { type: "circle" },
+      opacity: { value: 0.5 },
+      size: { value: 3 },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: "#ffffff",
+        opacity: 0.4,
+        width: 1
+      },
+      move: {
+        enable: true,
+        speed: 2
+      }
+    }
+  });
+</script>
+<script>
+  const texto = "¡Bienvenidos a la tienda deportiva femenina!";
+  const velocidad = 70;
+  let i = 0;
 
+  function escribirTexto() {
+    if (i < texto.length) {
+      document.getElementById("typewriter").innerHTML += texto.charAt(i);
+      i++;
+      setTimeout(escribirTexto, velocidad);
+    }
+  }
+
+  window.addEventListener('load', escribirTexto);
+</script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   </body>
