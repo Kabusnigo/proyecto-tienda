@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seccion Mujeres</title>
+     <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <!-- Scrolleeveal-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="css/style-mujeres.css" />
+        <!-- Fuente -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed" rel="stylesheet">
+  </head>
+  <body>
+    <div id="particles-js"></div>
+<!-- Navbar -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+              <img id="logo" src="/public/img/logo.png" alt="Inicio" width="60" height="60">
+            </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="hombres.html">Hombres</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="mujeres.html">Mujeres</a>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+
+  <div id="bienvenida-modal" class="modal">
+    <div class="modal-contenido">
+      <h2>¡Bienvenido a la tienda femenina! 🏋️‍♂️</h2>
+       <p>Explorá nuestros productos y encontrá tu estilo.</p>
+      <button onclick="cerrarModal()">Entrar</button>
+    </div>
+  </div>
+
+  <div id="main">
+
+  
+  <div class="container-lucas">
+      <div class="slider">
+        <input type="radio" name="slider" id="slideOne" checked />
+        <input type="radio" name="slider" id="slideTwo" />
+        <input type="radio" name="slider" id="slideThree" />
+        <input type="radio" name="slider" id="slideFour" />
+
+        <div class="buttons">
+          <label for="slideOne"></label>
+          <label for="slideTwo"></label>
+          <label for="slideThree"></label>
+          <label for="slideFour"></label>
+        </div>
+
+        <div class="content">
+          <div class="firstslide">
+            <div class="motivacion">
+              <img
+                src="img/1pdj-279bd434e7e0e2d44c17263308758722-640-0.jpg"
+                alt="Conjunto Deportivo"
+              />
+              <h1>
+                “No importa cuántas veces caigas, lo que define tu grandeza es
+                cuántas veces te levantás. Cada gota de sudor es una promesa de
+                superación. ¡Dale con todo!”
+              </h1>
+            </div>
+          </div>
+          <div class="twoslide">
+            <div class="motivacion">
+              <img
+                src="img/D_NQ_NP_789446-MLA50463930307_062022-W.jpg"
+                alt="Calza Mujeres"
+              />
+              <h2>
+                “Transformá el ‘no puedo’ en ‘lo logré’. Cada entrenamiento es
+                una batalla ganada contra tus límites. No estás compitiendo con
+                nadie, solo con la versión de vos mismo de ayer.”
+              </h2>
+            </div>
+          </div>
+
+          <div class="threeslide">
+            <div class="motivacion">
+              <img
+                src="img/woman-workout-in-gym-with-dumbbells-royalty-free-image-1661857202.jpg"
+                alt="Mujer entrenando"
+              />
+              <h3>
+                “La motivación te hace empezar, pero la constancia es la que te
+                transforma. Entrenar no es castigo, es el regalo que le das a tu
+                cuerpo por todo lo que hace por vos.”
+              </h3>
+            </div>
+          </div>
+          <div class="fourtslide">
+            <div class="motivacion">
+              <img
+                src="img/mujer-con-abdominales-visibles-haciendo-fitness.jpg"
+                alt="Mujer abdominales"
+              />
+              <h4>
+                “La mente se rinde mucho antes que el cuerpo. Si tu cabeza está
+                en el juego, tu cuerpo va a seguir. Creé en vos, incluso cuando
+                estés cansado. Ahí es donde empieza el verdadero cambio.”
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="productos-solo-deportes">
+    <div class="producto">
+     <img src="img/1pdj-279bd434e7e0e2d44c17263308758722-640-0.jpg" alt="Combo Deportivo" />
+     <p class="precio">$3000</p>
+     <p class="precio">Combo Deportivo</p>
+    </div>
+  <div class="producto">
+    <img src="img/D_NQ_NP_789446-MLA50463930307_062022-W.jpg" alt="Calza" />
+    <p class="precio">$2000</p>
+    <p class="precio">Calzas Deportivas</p>
+  </div>
+  <div class="producto">
+    <img src="img/2832-scaled.jpg" alt="Top" />
+    <p class="precio">$1500</p>
+    <p class="precio">Top Deportivo</p>
+  </div>
+  <div class="producto">
+    <img src="img/short.jpg" alt="short"/>
+    <p class="precio">$1500</p>
+    <p class="precio">Short</p>
+  </div>
+</div>
+
+  <script>
+  const slides = ['One', 'Two', 'Three', 'Four'];
+  let counter = 0;
+
+  setInterval(() => {
+    // Incrementamos el contador y lo reiniciamos cuando pasa el último slide
+    counter = (counter + 1) % slides.length;
+    // Marcamos como seleccionado el radio correspondiente
+    document.getElementById('slide' + slides[counter]).checked = true;
+  }, 4000);
+</script>
+<script>
+  function cerrarModal() {
+    document.getElementById('bienvenida-modal').style.display = 'none';
+  }
+
+  // Mostrar automáticamente al cargar
+  window.addEventListener('load', () => {
+    document.getElementById('bienvenida-modal').style.display = 'flex';
+  });
+</script>
+<!-- Footer -->
+     <footer id="footer">
+  <div class="footer-content">
+    <p>Bienvenidos a <strong>Fast</strong></p>
+    <div class="footer-links">
+      <a href="#inicio">Ir al comienzo</a>
+      <a target="_blank" href="https://ceneka.net/lucaslautro">Donación</a>
+      <a href="contacto.html">Contactame</a>
+    </div>
+    <p id="copy">&copy; <span id="year"></span> Fast. Todos los derechos reservados.</p>
+  </div>
+</footer>
+<script>
+  // Inserta el año actual
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+  // efecto particulas
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 80 },
+      color: { value: "#ffffff" },
+      shape: { type: "circle" },
+      opacity: { value: 0.5 },
+      size: { value: 3 },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: "#ffffff",
+        opacity: 0.4,
+        width: 1
+      },
+      move: {
+        enable: true,
+        speed: 2
+      }
+    }
+  });
+</script>
+<script>
+  const texto = "¡Bienvenidos a la tienda deportiva femenina!";
+  const velocidad = 70;
+  let i = 0;
+
+  function escribirTexto() {
+    if (i < texto.length) {
+      document.getElementById("typewriter").innerHTML += texto.charAt(i);
+      i++;
+      setTimeout(escribirTexto, velocidad);
+    }
+  }
+
+  window.addEventListener('load', escribirTexto);
+</script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  </body>
+</html>
