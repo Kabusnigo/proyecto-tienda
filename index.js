@@ -21,7 +21,7 @@ app.use('/mujeres', mujeresRouter);
 
 //  ------------------------------------
 
-//  -------------- PUBLIC --------------
+//  -------------- PUBLIC ---------------
 // Cuando este en la pag. principal, el servidor manda el index.html
 
 app.get('/', (req,res) => 
