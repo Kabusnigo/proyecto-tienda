@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const path = require('path');
 let puerto = 3000;
-
 app.use(express.json());
 
 // app.use es un Middleware
