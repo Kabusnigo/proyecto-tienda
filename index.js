@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const hombresRouter = require('./routes/hombres');
+const mujeresRouter = require('./routes/mujeres');
 let puerto = 3000;
 app.use(express.json());
 
@@ -8,12 +10,12 @@ app.use(express.json());
 // Para que se envien multiples archivos estaticos desde una carpeta especifica
 // asi aparece el style del sitio. 
 // El app.get() es lo mismo, pero en una ruta especifica
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname,'public')));
 
 
 //  -------------- ROUTES --------------
-const hombresRouter = require('./routes/hombres.js');
 app.use('/hombres', hombresRouter);
+app.use('/mujeres', mujeresRouter);
 // Cada vez que alguien llame a /hombres, lo resuelvo con el contenido de hombresRouter
 
 
@@ -21,6 +23,7 @@ app.use('/hombres', hombresRouter);
 
 //  -------------- PUBLIC --------------
 // Cuando este en la pag. principal, el servidor manda el index.html
+
 app.get('/', (req,res) => 
 {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
@@ -35,7 +38,6 @@ app.get('/mujeres', (req,res) =>
 {
     res.sendFile(path.join(__dirname, 'public', 'mujeres.html'));
 });
-
 //  -------------- END OF PUBLIC --------------
 
 

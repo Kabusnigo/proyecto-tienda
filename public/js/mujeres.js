@@ -1,12 +1,9 @@
-//const { listarRopasHombres } = require("../../controller/userController");
-
-
 document.addEventListener('DOMContentLoaded', () =>{
     const mostrarRopas = document.querySelector('.productos-solo-deportes');
 
-    async function mostrarRopasHombres() {
+    async function mostrarRopasMujeres() {
         try {
-            const response = await fetch('/hombres');
+            const response = await fetch('/mujeres');
             if (!response.ok) {
                 throw new Error(`Error en la petición: ${response.status}`);
             }
@@ -31,14 +28,5 @@ document.addEventListener('DOMContentLoaded', () =>{
             mostrarRopas.innerHTML = '<p>Error al cargar ropas.</p>';
         }
     }
-    mostrarRopasHombres(); // Llamada automática al cargar la página
+    mostrarRopasMujeres(); // Llamada automática al cargar la página
 })
-
-
-/*
-<img src="/img/${ropa.imgUrl}" alt="${ropa.nombre}" />
-"/img/${ropa.imgUrl}" asume que el servidor está sirviendo la carpeta public como raíz y que public/img/ está accesible desde la URL /img/.
-
-Si Express está configurado para servir archivos estáticos con app.use(express.static('public')), entonces el navegador puede acceder a cualquier recurso dentro de public/ usando rutas como /img/nombreImagen.jpg.
-
-*/
