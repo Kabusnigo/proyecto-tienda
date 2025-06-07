@@ -22,17 +22,17 @@ app.use('/hombres', hombresRouter);
 
 //  -------------- PUBLIC --------------
 // Cuando este en la pag. principal, el servidor manda el index.html
-app.get("/", (req, res) => 
+app.get('/', (req,res) => 
 {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.get("/hombres", (req, res) => 
+app.get('/hombres', (req,res) => 
 {
     res.sendFile(path.join(__dirname, 'public', 'hombres.html'));
 });
 
-app.get("/mujeres", (req, res) => 
+app.get('/mujeres', (req,res) => 
 {
     res.sendFile(path.join(__dirname, 'public', 'mujeres.html'));
 });
@@ -50,7 +50,7 @@ app.listen(puerto, () => {
 //  -------------- END OF OPEN SERVER IN PORT --------------
 
 // MULTER 
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // 
 
 //nodemon: node --watch index.js PARA QUE SE ACTUALICE EL ARCHIVO.

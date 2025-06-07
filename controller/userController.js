@@ -5,7 +5,7 @@ const db = require('../db/dataBase.js');
 // ---------  GET -------------
 // ----------------------------
 
-// ----- Comidas ------
+// ----- ROPAS HOMBRES ------
 const listarRopasHombres = (req, res) => {
     const sql = "SELECT * FROM ropas WHERE sexo LIKE 'masculino'";
     
@@ -17,9 +17,24 @@ const listarRopasHombres = (req, res) => {
     });
 }
 
+/*
+// ----- ROPAS HOMBRES ------
+const listarRopasHombres = (req, res) => {
+    const {sexo} = req.params;
+    const sql = "SELECT * FROM ropas WHERE sexo LIKE '?'";
+    
+    db.query(sql, [sexo], (err, results) => {
+        if (err) 
+            throw err;
+        
+        res.json(results);
+    });
+}
+ */
+
 module.exports = {
     // GET
     listarRopasHombres,
     //multer
-    upload
+    //pload
 }
