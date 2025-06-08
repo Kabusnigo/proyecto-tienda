@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const hombresRouter = require('./routes/hombres');
 const mujeresRouter = require('./routes/mujeres');
-let puerto = 3000;
+let puerto = 3306;
 app.use(express.json());
 
 // app.use es un Middleware
