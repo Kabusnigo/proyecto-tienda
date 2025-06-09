@@ -20,3 +20,7 @@ self.addEventListener('install', function (event) {
         })
     );
 });
+
+self.addEventListener('activate', () => {
+    console.log('ServiceWorker activado');
+});
