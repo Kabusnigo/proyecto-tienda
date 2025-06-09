@@ -20,9 +20,23 @@ self.addEventListener('install', function (event) {
         })
     );
 });
-
+/*
 self.addEventListener('activate', () => {
     console.log('ServiceWorker activado');
+});
+*/
+self.addEventListener('activate', (e) => {
+    e.waitUntil(
+        caches.keys().then(cacheList => {
+            return Promise.all(
+                cacheList.map(cache => {
+                    if(!cacheName.includes(cache)){
+                        return caches.delete(cache);
+                    }
+                })
+            )
+        })
+    )
 });
 
 self.addEventListener('fetch', function (event) {
@@ -36,3 +50,12 @@ self.addEventListener('fetch', function (event) {
         })
     )
 })
+
+// Cache First
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        caches.match(event.request).then(cacheResponse => {
+            return cacheResponse || fetch(event.request);
+        })
+    )
+});
