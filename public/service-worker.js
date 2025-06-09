@@ -24,3 +24,15 @@ self.addEventListener('install', function (event) {
 self.addEventListener('activate', () => {
     console.log('ServiceWorker activado');
 });
+
+self.addEventListener('fetch', function (event) {
+    event.respondWith(
+        cache.match(event.request)
+        .then(function (response) {
+            if(response){
+                return response;
+            }
+            return fetch(event.request);
+        })
+    )
+})
