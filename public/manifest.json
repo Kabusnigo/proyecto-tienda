@@ -1,0 +1,17 @@
+{
+    "short_name" : "FAST",
+    "name" : "Fast - Tienda deportiva",
+    "icons" : [
+        {
+            "src" : "/img/logo.png",
+            "sizes" : "192x192",
+            "type" : "image/png"
+        }
+    ],
+    "start_url" : "/index.html",
+    "display" : "standalone",
+    "background_color" : "#222",
+    "theme_color" : "#222",
+    "orientation" : "portrait",
+    "categories" : ["shopping", "tienda", "deportes", "ropa deportiva", "tienda virtual"]
+}
