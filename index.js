@@ -50,6 +50,20 @@ app.listen(puerto, () => {
 
 //  -------------- END OF OPEN SERVER IN PORT --------------
 
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+        navigator.serviceWorker.register('public/service-worker.js')
+        .then(function() {
+            console.log('ServiceWorker registered!');
+        }).catch(function (err){
+            console.log('ServiceWorker failed',err);
+        });
+    })
+  
+}
+
+
+
 // MULTER 
 // app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // 
