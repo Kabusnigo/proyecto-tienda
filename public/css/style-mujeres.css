@@ -9,7 +9,12 @@
     font-style: normal; 
     scroll-behavior: smooth;
 }
-
+/* BASE (PC) */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 /* VARIABLES GLOBALES */
 :root {
     /* BACKGROUND COLORS */
@@ -107,13 +112,14 @@ body {
     width: 40px;
 }
 
-.content{
-position: relative;
-width: 400vw;
-display:flex;
-transition: 400ms ease-in-out;
+.content {
+  position: relative;
+  width: 400vw; /* 4 slides * 100vw */
+  display: flex;
+  flex-wrap: nowrap;
+  transition: 400ms ease-in-out;
+  overflow-x: hidden;  /* ⛔ Agregado para prevenir desborde */
 }
-
 .firstslide,.twoslide,.threeslide,.fourtslide{
     position: relative;
     width:100vw;
@@ -154,40 +160,94 @@ transition: 400ms ease-in-out;
 .slider input:nth-child(4):checked ~ .content{
     left: -300vw;
 }
-.motivacion {
-  display: flex;              /* coloca imagen y texto lado a lado */
-  align-items: center;        /* centra verticalmente */
-  justify-content: center;    /* centra todo el conjunto en el slide */
-  gap: 30px;                  /* espacio entre imagen y texto */
-  padding: 20px;
-}
-
-.motivacion img {
-  width: 200px;               /* tamaño de la imagen */
+.img-slide-uno,
+.img-slide-dos,
+.img-slide-tres,
+.img-slide-cuatro {
+  width: 100%;
+  max-width: 400px; /* puedes ajustar este máximo si es necesario */
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+.motivacion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  flex-wrap: wrap;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: center;         /* 🔁 Asegura alineación */
+  overflow-wrap: break-word;  /* 🔁 Forza corte de texto */
+  word-wrap: break-word;
+}
+.motivacion img {
+  
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+   max-width: 90vw;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 
-.motivacion h1 {
-  font-size: 2rem;
-  color: white;
-  max-width: 400px;
-}
-.motivacion h2 {
-  font-size: 2rem;
-  color: white;
-  max-width: 400px;
-}
-.motivacion h3 {
-  font-size: 2rem;
-  color: white;
-  max-width: 400px;
-}
+.motivacion h1,
+.motivacion h2,
+.motivacion h3,
 .motivacion h4 {
-  font-size: 2rem;
+  font-size: clamp(1rem, 3vw, 2.5rem);
+  max-width: 80vw;   /* 🔁 Limita el ancho en desktop */
+  text-align: center;
   color: white;
-  max-width: 400px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+@media (max-width: 768px) {
+  .motivacion {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .motivacion img {
+    max-width: 90%;
+  }
+
+  .motivacion h1,
+  .motivacion h2,
+  .motivacion h3,
+  .motivacion h4 {
+    max-width: 90%;
+  }
+}
+.firstslide,
+.twoslide,
+.threeslide,
+.fourtslide {
+  position: relative;
+  width: 100vw;
+  height: auto;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.img-slide-uno,
+.img-slide-dos,
+.img-slide-tres,
+.img-slide-cuatro {
+  width: 100%;
+  max-width: 400px;   /* 🔁 No más de esto */
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 .productos-solo-deportes {
   width: 100vw;
@@ -311,5 +371,17 @@ footer {
   z-index: -1; /* para que quede al fondo */
 }
 /* ------------- END OF PARTICLES -------------- */
+@media (min-width: 769px) {
+  .img-slide-uno,
+  .img-slide-dos,
+  .img-slide-tres,
+  .img-slide-cuatro {
+    width: 200px !important;
+    height: auto !important;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+}
 
 
