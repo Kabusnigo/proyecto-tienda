@@ -1,218 +1,133 @@
+/* ---------------- RESET Y BASE ---------------- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: var(--secondary-bg-color);
-    font-family: var(--fuente);
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal; 
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--secondary-bg-color);
+  font-family: var(--fuente);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: lightsteelblue;
 }
 
-/* VARIABLES GLOBALES */
+/* ---------------- VARIABLES ---------------- */
 :root {
-    /* BACKGROUND COLORS */
-    --main-bg-color: rgb(235, 245, 236);
-    --secondary-bg-color: #222;
-    /* NAVBAR COLORS*/
-    --navbar-color: rgb(235, 245, 236);
-    --navbar-toggler: #523523;
-    --navbar-toggler-border: #ffffff;
-    --navbar-toggler-border-active: rgb(0, 52, 73);
-    --navbar-hoover: rgb(0, 209, 177);
-    /* FOOTER BACKGROUND COLOR*/
-    --footer-bg-color: #222;
-    /* BORDER COLORS*/
-    --border-color: rgb(63, 47, 47);
-    /* FONT */
-    --fuente-color: white;
-    --fuente: 'Roboto Condensed', sans-serif
+  --main-bg-color: rgb(235, 245, 236);
+  --secondary-bg-color: #222;
+  --navbar-color: rgb(235, 245, 236);
+  --navbar-toggler: #523523;
+  --navbar-toggler-border: #ffffff;
+  --navbar-toggler-border-active: rgb(0, 52, 73);
+  --navbar-hoover: rgb(0, 209, 177);
+  --footer-bg-color: #222;
+  --border-color: rgb(63, 47, 47);
+  --fuente-color: white;
+  --fuente: 'Roboto Condensed', sans-serif;
 }
 
 /* ---------------- NAVBAR ---------------- */
-
 .navbar {
   background-color: var(--navbar-color);
 }
-
-/* Cambia el color del texto de los enlaces */
 .navbar .nav-link {
   color: rgb(0, 0, 0);
 }
-  
-  /* Cambia el color del texto al pasar el mouse por encima */
 .navbar .nav-link:hover {
-  color: var(--navbar-hoover); /* Dorado */
-  text-shadow: 1px 1px 1px var(--navbar-toggler-border-active)
+  color: var(--navbar-hoover);
+  text-shadow: 1px 1px 1px var(--navbar-toggler-border-active);
 }
-  
-  /* Cambia el color del enlace activo */
 .navbar .nav-link.active {
- color: var(--navbar-toggler-border-active);
+  color: var(--navbar-toggler-border-active);
 }
 
-/* ---------------- END OF NAVBAR ---------------- */
-
-body {
-  background-color: lightsteelblue;
-  margin: 0;
-  padding: 0;
+/* ---------------- SLIDER ---------------- */
+.container-lucas {
+  position: relative;
+  width: 100%;
+  height: auto;
 }
-
-#main{
-  background-color: var(--footer-bg-color);
-  margin: 0;
-  padding: 0;
+.slider input {
+  visibility: hidden;
+  display: none;
 }
-
-.container-lucas{
-    position: relative;
-    width: 100%;
-    height: auto;
+.buttons {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  bottom: 50px;
+  gap: 10px;
 }
-
-.slider input{
-    visibility: hidden;
-    display: none;
+.buttons label {
+  width: 20px;
+  height: 20px;
+  background-color: antiquewhite;
+  opacity: 0.5;
+  cursor: pointer;
+  z-index: 1;
 }
-.buttons{
-    position: absolute;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    bottom: 50px;
-    gap: 10px;
-
+.buttons label:hover {
+  scale: 1.2;
+  opacity: 1;
 }
-.buttons label{
-    width: 20px;
-    height: 20px;
-    background-color: antiquewhite;
-    opacity: 0.5;
-    cursor: pointer;
-    z-index: 1;
-
-}
-.buttons label:hover{
-    scale: 1.2;
-    opacity: 1;
-}
-
 .slider input:nth-child(1):checked ~ .buttons label:nth-child(1),
 .slider input:nth-child(2):checked ~ .buttons label:nth-child(2),
 .slider input:nth-child(3):checked ~ .buttons label:nth-child(3),
-.slider input:nth-child(4):checked ~ .buttons label:nth-child(4)
-{
-    opacity: 1;
-    scroll-margin: 1.2;
-    width: 40px;
+.slider input:nth-child(4):checked ~ .buttons label:nth-child(4) {
+  opacity: 1;
+  width: 40px;
+}
+.content {
+  position: relative;
+  width: 400vw;
+  display: flex;
+  transition: left 0.5s ease-in-out;
+  left: 0;
+}
+.slider input:nth-child(1):checked ~ .content { left: 0; }
+.slider input:nth-child(2):checked ~ .content { left: -100vw; }
+.slider input:nth-child(3):checked ~ .content { left: -200vw; }
+.slider input:nth-child(4):checked ~ .content { left: -300vw; }
+.firstslide, .twoslide, .threeslide, .fourtslide {
+  position: relative;
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: dodgerblue;
 }
 
-.content{
-position: relative;
-width: 400vw;
-display:flex;
-transition: 400ms ease-in-out;
-}
-.firstslide,.twoslide,.threeslide,.fourtslide{
-    position: relative;
-    width:100vw;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.firstslide
-{
-    background-color: dodgerblue;
-}
-.twoslide
-{
-    background-color: dodgerblue;
-}
-.threeslide
-{
-    background-color: dodgerblue;
-}
-.fourtslide
-{
-    background-color: dodgerblue;
-}
-.slider input:nth-child(1):checked ~ .content{
-    left: 0;
-}
-
-.slider input:nth-child(2):checked ~ .content{
-    left: -100vw;
-}
-
-.slider input:nth-child(3):checked ~ .content{
-    left: -200vw;
-}
-
-.slider input:nth-child(4):checked ~ .content{
-    left: -300vw;
-}
+/* ---------------- MOTIVACIÓN ---------------- */
 .motivacion {
-  display: flex;              /* coloca imagen y texto lado a lado */
-  align-items: center;        /* centra verticalmente */
-  justify-content: center;    /* centra todo el conjunto en el slide */
-  gap: 30px;                  /* espacio entre imagen y texto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
   padding: 20px;
+  max-width: 90%;
+  margin: 0 auto;
 }
-
-/*.motivacion img {
-  width: 200px;               
+.motivacion img,
+.img-slide-uno,
+.img-slide-dos,
+.img-slide-tres,
+.img-slide-cuatro {
+  width: 100%;
   height: auto;
+  object-fit: contain;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}*/
-.img-slide-uno{
-    width: 400px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-.img-slide-dos{
-    width: 200px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-.img-slide-tres{
-    width: 500px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-.img-slide-cuatro{
-    width: 250px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-.motivacion h1 {
-  font-size: 2rem;
-  color: white;
-  max-width: 400px;
-}
-.motivacion h2 {
-  font-size: 2rem;
-  color: white;
-  max-width: 400px;
-}
-.motivacion h3 {
-  font-size: 2rem;
-  color: white;
-  max-width: 400px;
-}
-.motivacion h4 {
-  font-size: 2rem;
-  color: white;
-  max-width: 400px;
-}
+
+/* ---------------- PRODUCTOS ---------------- */
 .productos-solo-deportes {
   width: 100vw;
   display: flex;
@@ -220,9 +135,7 @@ transition: 400ms ease-in-out;
   flex-wrap: wrap;
   gap: 100px;
   padding: 50px 20px;
-  
-  margin: 0;}
-
+}
 .producto {
   display: flex;
   flex-direction: column;
@@ -231,40 +144,38 @@ transition: 400ms ease-in-out;
   background-color: #f9f9f9;
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 8px 8px rgba(0,0,0,0.3), 0 10px 20px rgba(0,0,0,0.15);/* Sombra */
+  box-shadow: 0 8px 8px rgba(0,0,0,0.3), 0 10px 20px rgba(0,0,0,0.15);
   transition: transform 0.2s, box-shadow 0.2s;
 }
-
 .producto:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2); /* Más sombra al pasar el mouse */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
-
 .producto img {
   width: 100%;
   height: auto;
   border-radius: 5px;
 }
-
 .precio {
   margin-top: 10px;
   font-weight: bold;
   color: #333;
   font-size: 1.1rem;
 }
+
+/* ---------------- MODAL ---------------- */
 .modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* fondo oscuro */
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
 }
-
 .modal-contenido {
   background-color: white;
   padding: 30px;
@@ -273,11 +184,9 @@ transition: 400ms ease-in-out;
   max-width: 90%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
-
 .modal-contenido h2 {
   margin-bottom: 10px;
 }
-
 .modal-contenido button {
   margin-top: 20px;
   padding: 10px 20px;
@@ -287,7 +196,8 @@ transition: 400ms ease-in-out;
   border-radius: 5px;
   cursor: pointer;
 }
-/* ------------- FOOTER -------------- */
+
+/* ---------------- FOOTER ---------------- */
 footer {
   background: linear-gradient(135deg, #004d40, #26a69a);
   color: white;
@@ -296,16 +206,13 @@ footer {
   box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.3);
   font-family: 'Segoe UI', sans-serif;
 }
-
 .footer-content {
   max-width: 800px;
   margin: 0 auto;
 }
-
 .footer-links {
   margin: 15px 0;
 }
-
 .footer-links a {
   color: #e0f2f1;
   margin: 0 15px;
@@ -313,20 +220,62 @@ footer {
   font-weight: bold;
   transition: color 0.3s ease;
 }
-
 .footer-links a:hover {
   color: #ffffff;
   text-shadow: 0 0 5px #ffffff;
 }
-/* ------------- END OF FOOTER -------------- */
 
+/* ---------------- PARTICULAS ---------------- */
 #particles-js {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* para que quede al fondo */
+  z-index: -1;
+}
+
+/* ---------------- MEDIA QUERY: PC ---------------- */
+@media (min-width: 769px) {
+  .motivacion img,
+  .img-slide-uno,
+  .img-slide-dos,
+  .img-slide-tres,
+  .img-slide-cuatro {
+    width: 60%;
+    max-width: 250px;
+    height: auto;
+    object-fit: contain;
+  }
+  .motivacion h1, .motivacion h2, .motivacion h3, .motivacion h4 {
+    font-size: 2rem;
+    color: white;
+    max-width: 400px;
+  }
+}
+
+/* ---------------- MEDIA QUERY: MÓVIL ---------------- */
+@media (max-width: 768px) {
+  .firstslide, .twoslide, .threeslide, .fourtslide {
+    height: auto;
+    padding: 20px 0;
+  }
+  .motivacion {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .motivacion h1, .motivacion h2, .motivacion h3, .motivacion h4 {
+    font-size: 1.2rem;
+    max-width: 90vw;
+    text-align: center;
+  }
+  .img-slide-uno,
+  .img-slide-dos,
+  .img-slide-tres,
+  .img-slide-cuatro {
+    width: 90vw;
+    max-width: 100%;
+  }
 }
 
 
