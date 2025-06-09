@@ -10,8 +10,8 @@
     ],
     "start_url" : "/index.html",
     "display" : "standalone",
-    "background_color" : "#222",
-    "theme_color" : "#222",
+    "background_color" : "#EBF5EC",
+    "theme_color" : "#EBF5EC",
     "orientation" : "portrait",
     "categories" : ["shopping", "tienda", "deportes", "ropa deportiva", "tienda virtual"]
 }
